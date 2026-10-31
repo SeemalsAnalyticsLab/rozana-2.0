@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#183c32">
+<title>Rozana — Your Wellness Tracker</title>
+<style>
+:root{--green:#183c32;--green2:#285c4b;--mint:#e9f3ed;--cream:#faf8f2;--ink:#202923;--muted:#68756d;--line:#e5e9e3;--white:#fff;--orange:#e5a45b;--pink:#f7e9e4;--shadow:0 12px 35px rgba(25,55,43,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:1200px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:20px}.brand{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;border-radius:15px;background:var(--green);color:white;display:grid;place-items:center;font-size:24px}.brand h1{font-size:22px;margin:0;letter-spacing:-.7px}.brand p{margin:0;color:var(--muted);font-size:12px}.datepill{background:white;border:1px solid var(--line);padding:10px 14px;border-radius:13px;color:var(--muted);font-size:13px}.hero{background:linear-gradient(120deg,#183c32,#31634f);color:white;border-radius:24px;padding:26px;display:grid;grid-template-columns:1.5fr 1fr;gap:22px;box-shadow:var(--shadow);margin-bottom:20px}.eyebrow{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:.75}.hero h2{font-size:clamp(24px,4vw,36px);line-height:1.1;margin:9px 0}.hero p{color:#d7e5dc;max-width:560px;margin:0 0 18px}.hero-actions{display:flex;gap:9px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:11px 15px;background:var(--green);color:white;font-weight:650}.btn.light{background:white;color:var(--green)}.btn.ghost{background:#ffffff1c;color:white;border:1px solid #ffffff45}.btn.soft{background:var(--mint);color:var(--green)}.btn.small{padding:7px 10px;font-size:12px}.quote{align-self:center;background:#ffffff13;border:1px solid #ffffff30;border-radius:18px;padding:19px}.quote blockquote{margin:7px 0 10px;font-size:18px;font-weight:650}.quote small{color:#d7e5dc}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.card{background:white;border:1px solid var(--line);border-radius:19px;padding:19px;box-shadow:0 4px 18px rgba(25,55,43,.035);min-width:0}.span-8{grid-column:span 8}.span-7{grid-column:span 7}.span-6{grid-column:span 6}.span-5{grid-column:span 5}.span-4{grid-column:span 4}.span-12{grid-column:span 12}.cardhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.card h3{font-size:16px;margin:0}.sub{font-size:12px;color:var(--muted)}.metricrow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{background:#f7faf7;border-radius:14px;padding:13px}.metric b{display:block;font-size:22px;letter-spacing:-.7px}.metric span{font-size:11px;color:var(--muted)}.progress{height:9px;background:#edf1ed;border-radius:99px;overflow:hidden;margin:9px 0}.progress i{display:block;height:100%;background:#4c8a68;border-radius:99px;width:0;transition:width .3s}.foodform{display:grid;grid-template-columns:1.5fr .7fr .7fr auto;gap:8px}.field{width:100%;border:1px solid var(--line);background:#fff;border-radius:11px;padding:11px 12px;outline:none;color:var(--ink)}.field:focus{border-color:#6b9b7d;box-shadow:0 0 0 3px #dcebe0}.foodchips{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.chip{border:1px solid var(--line);background:#fbfcfa;border-radius:99px;padding:6px 10px;font-size:12px;color:var(--muted)}.chip:hover{border-color:#9bb9a4;color:var(--green)}.table{width:100%;border-collapse:collapse}.table td{padding:10px 3px;border-bottom:1px solid #f0f2ef;font-size:13px}.table tr:last-child td{border:0}.right{text-align:right}.tag{font-size:10px;background:var(--mint);color:var(--green);padding:4px 7px;border-radius:99px}.mealgroup{margin:14px 0 4px}.mealgroup h4{margin:0 0 5px;font-size:12px;color:var(--green)}.empty{color:var(--muted);font-size:13px;padding:12px 0}.task{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #f0f2ef}.task:last-child{border:0}.task input{accent-color:var(--green);width:17px;height:17px}.task.done label{text-decoration:line-through;color:#9aa49c}.task label{flex:1;font-size:13px}.task small{color:var(--muted);font-size:11px}.recipe{border:1px solid var(--line);border-radius:13px;padding:12px;margin:8px 0}.recipe b{display:block;font-size:13px}.recipe p{margin:4px 0;color:var(--muted);font-size:12px}.recipe .meta{font-size:11px;color:var(--green);font-weight:650}.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}.hint{background:#f8f6ef;border-radius:13px;padding:12px;font-size:12px;color:#655c48}.water{display:flex;gap:7px;flex-wrap:wrap}.glass{width:31px;height:38px;border:1.5px solid #8bb8c1;border-radius:6px 6px 10px 10px;background:linear-gradient(to top,#c8e7ec 0 0);opacity:.4}.glass.filled{opacity:1;background:linear-gradient(to top,#9bd3df 75%,transparent 75%)}.tabs{display:flex;gap:7px;overflow:auto;margin:16px 0}.tab{border:1px solid var(--line);background:white;border-radius:99px;padding:8px 13px;font-size:12px;color:var(--muted);white-space:nowrap}.tab.active{background:var(--green);color:white;border-color:var(--green)}.panel{display:none}.panel.active{display:block}.notice{font-size:11px;color:var(--muted);line-height:1.5}.delete{border:0;background:none;color:#b66a5d;font-size:17px;padding:2px 6px}.streak{font-size:28px}.footer{text-align:center;color:var(--muted);font-size:11px;padding:25px 0 8px}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#203e32;color:white;padding:11px 16px;border-radius:12px;box-shadow:var(--shadow);display:none;z-index:5;font-size:13px}.toast.show{display:block}
+@media(max-width:800px){.app{padding:13px}.hero{grid-template-columns:1fr}.span-8,.span-7,.span-6,.span-5,.span-4{grid-column:span 12}.foodform{grid-template-columns:1fr 1fr}.foodform input:first-child{grid-column:span 2}.foodform button{grid-column:span 2}.top{align-items:flex-start}.datepill{font-size:11px}.metricrow{gap:7px}.metric{padding:10px}.metric b{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div class="brand"><div class="logo">✿</div><div><h1>rozana<span style="color:#6d9b78">.</span></h1><p>Your gentle, everyday wellness companion</p></div></div><div class="datepill" id="todayLabel"></div></header>
+<section class="hero">
+ <div><div class="eyebrow">Small steps. Real progress.</div><h2>Show up for yourself,<br>one day at a time.</h2><p>Track your food, movement, water and habits — with familiar Pakistani meals and Roman Urdu-friendly search.</p><div class="hero-actions"><button class="btn light" onclick="document.getElementById('foodInput').focus()">＋ Log food</button><button class="btn ghost" onclick="newDay()">Start fresh today</button></div></div>
+ <div class="quote"><div class="eyebrow">Aaj ka reminder · today's reminder</div><blockquote id="motivation">Consistency, perfection se zyada important hai.</blockquote><small id="motivationEn">Consistency matters more than perfection.</small></div>
+</section>
+<div class="grid">
+ <section class="card span-8">
+  <div class="cardhead"><div><h3>Today's nutrition</h3><div class="sub">Your starting target · editable in Settings</div></div><span class="tag" id="calorieStatus">On your way</span></div>
+  <div class="metricrow"><div class="metric"><b id="calEaten">0</b><span>Calories eaten</span></div><div class="metric"><b id="calLeft">1,500</b><span>Calories remaining</span></div><div class="metric"><b id="proteinEaten">0g</b><span>Protein logged</span></div></div>
+  <div class="progress"><i id="calBar"></i></div><div class="sub" id="calCaption">0 of 1,500 kcal logged</div>
+  <div style="height:14px"></div><div class="cardhead"><h3>Food diary</h3><span class="sub">Tap × to remove an entry</span></div>
+  <div class="foodform"><input id="foodInput" class="field" list="foodOptions" placeholder="Search: roti, anda, daal, biryani… / Roman Urdu"><datalist id="foodOptions"></datalist><input id="foodQty" class="field" type="number" min=".1" step=".1" value="1" aria-label="Quantity"><select id="foodUnit" class="field"><option value="serving">serving</option><option value="g">grams</option><option value="ml">ml</option></select><button class="btn" onclick="addFood()">Add</button></div>
+  <div class="foodchips"><button class="chip" onclick="quickFood('1 medium roti')">+ Roti</button><button class="chip" onclick="quickFood('1 boiled egg')">+ Boiled egg</button><button class="chip" onclick="quickFood('1 cup daal')">+ Daal</button><button class="chip" onclick="quickFood('1 cup chai with milk and sugar')">+ Chai</button><button class="chip" onclick="quickFood('1 cup chicken yakhni')">+ Yakhni</button></div>
+  <div id="foodDiary"></div>
+  <div class="notice">Food values are estimates. Homemade recipes, oil, portion size and restaurant preparation can change calories significantly. For an item not listed, enter its name and use “Add custom food” below.</div>
+  <button class="btn soft small" style="margin-top:10px" onclick="customFood()">＋ Add custom food / apna khana</button>
+ </section>
+ <section class="card span-4">
+  <div class="cardhead"><h3>Daily targets</h3><span class="streak">🌱</span></div>
+  <div class="metricrow"><div class="metric"><b id="taskCount">0/6</b><span>Tasks done</span></div><div class="metric"><b id="streakCount">0</b><span>Water glasses</span></div><div class="metric"><b id="moveCount">0</b><span>Move minutes</span></div></div>
+  <div class="progress"><i id="taskBar"></i></div>
+  <div id="tasks"></div>
+  <button class="btn soft small" onclick="addTask()">＋ Add my own task</button>
+ </section>
+ <section class="card span-5">
+  <div class="cardhead"><div><h3>Hydration station 💧</h3><div class="sub">Set a small water goal and build consistency</div></div></div>
+  <div class="metricrow"><div class="metric"><b id="waterCount">0 / 8</b><span>Glasses today</span></div><div class="metric"><b id="waterMl">0 ml</b><span>Approx. water</span></div><div class="metric"><b>250 ml</b><span>Per glass</span></div></div>
+  <div class="water" id="waterButtons" style="margin:15px 0"></div>
+  <button class="btn soft small" onclick="changeWater(-1)">− Remove glass</button> <button class="btn small" onclick="changeWater(1)">＋ Add glass</button>
+  <p class="notice">Hydration needs vary with weather, activity and health. Drink to thirst; this is a gentle tracker, not a medical prescription.</p>
+ </section>
+ <section class="card span-7">
+  <div class="cardhead"><div><h3>What can I cook? 🍲</h3><div class="sub">Tell us what is in your kitchen — ingredients or Roman Urdu both work.</div></div></div>
+  <input class="field" id="ingredients" placeholder="e.g. chicken, anda, lauki, dahi / chicken hai, anda bhi hai">
+  <div class="foodchips"><button class="chip" onclick="fillIngredients('anda, tomato, onion, roti')">Anda + sabzi</button><button class="chip" onclick="fillIngredients('chicken, cabbage, carrot')">Chicken + vegetables</button><button class="chip" onclick="fillIngredients('daal, rice, onion')">Daal + chawal</button></div>
+  <button class="btn" onclick="suggestRecipes()">Find meal ideas</button><div id="recipes" style="margin-top:10px"><div class="empty">Your meal ideas will appear here. Add the ingredients you have.</div></div>
+ </section>
+ <section class="card span-6">
+  <div class="cardhead"><div><h3>Smart swaps 🥗</h3><div class="sub">Easy, realistic swaps using everyday Pakistani foods</div></div></div>
+  <div id="swaps"></div>
+ </section>
+ <section class="card span-6">
+  <div class="cardhead"><div><h3>Movement & strength</h3><div class="sub">Log your activity — every bit counts</div></div></div>
+  <div class="two"><select class="field" id="activityType"><option>Indoor walk</option><option>Dumbbell strength</option><option>Stretching</option><option>Dance / cardio</option><option>Other movement</option></select><input class="field" type="number" id="activityMinutes" min="1" placeholder="Minutes"></div>
+  <button class="btn" style="margin-top:9px" onclick="logActivity()">Log activity</button><div id="activityLog" class="empty">No movement logged yet today.</div>
+  <p class="hint">A practical starting rhythm: full-body strength 3 days/week, walks on 4–5 days, and recovery when needed. Increase gradually.</p>
+ </section>
+ <section class="card span-6">
+  <div class="cardhead"><div><h3>Progress check-in 📈</h3><div class="sub">Track trends, not one-day fluctuations</div></div></div>
+  <div class="two"><input class="field" type="number" id="weightInput" step=".1" placeholder="Weight in kg"><input class="field" type="number" id="waistInput" step=".1" placeholder="Waist in cm (optional)"></div>
+  <button class="btn" style="margin-top:9px" onclick="saveProgress()">Save today's check-in</button><div id="progressHistory" class="empty">No check-ins yet.</div>
+ </section>
+ <section class="card span-6">
+  <div class="cardhead"><div><h3>Weekly consistency</h3><div class="sub">A little progress, repeated</div></div></div>
+  <div id="weekView" class="metricrow"></div><p class="notice">Your progress is about habits, energy and strength as well as weight.</p>
+ </section>
+ <section class="card span-12">
+  <div class="cardhead"><div><h3>Personal settings ⚙️</h3><div class="sub">Starting targets are based on the details you shared. Adjust with care.</div></div></div>
+  <div class="two">
+   <label class="sub">Daily calorie target (kcal)<input class="field" id="targetCalories" type="number" value="1500" min="1000" max="3000"></label>
+   <label class="sub">Daily protein target (g)<input class="field" id="targetProtein" type="number" value="105" min="30" max="250"></label>
+   <label class="sub">Water glass goal<input class="field" id="targetWater" type="number" value="8" min="1" max="20"></label>
+   <label class="sub">Daily motivation reminder<input class="field" id="reminderTime" type="time" value="09:00"></label>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn" onclick="saveSettings()">Save settings</button><button class="btn soft" onclick="enableNotifications()">Enable browser reminder</button><button class="btn soft" onclick="exportData()">Export my data</button><button class="btn soft" onclick="document.getElementById('importFile').click()">Import backup</button><input id="importFile" type="file" accept="application/json" hidden onchange="importData(event)"></div>
+  <p class="notice" style="margin-top:12px">Your entries are saved in this browser on this device (local storage). They are not automatically synced between devices or backed up online. Export a backup regularly. Browser reminders work only when this page/browser is allowed to send notifications; some browsers may pause reminders when the page is closed.</p>
+ </section>
+</div>
+<div class="footer">Made for real life in Pakistan · Khud se narmi, roz thori consistency. <br>Nutrition estimates are educational, not medical advice.</div>
+</div><div class="toast" id="toast"></div>
+<script>
+const DB = [
+{name:'boiled egg',aliases:['anda','ubla anda','1 boiled egg','egg'],kcal:78,p:6.3,unit:'piece',g:50},
+{name:'fried egg (little oil)',aliases:['fried anda','anda fry'],kcal:105,p:6.5,unit:'piece',g:55},
+{name:'roti medium',aliases:['roti','chapati','1 medium roti','atta roti'],kcal:120,p:3.5,unit:'piece',g:40},
+{name:'paratha',aliases:['plain paratha','1 paratha'],kcal:260,p:5,unit:'piece',g:80},
+{name:'brown bread slice',aliases:['whole wheat bread','brown bread'],kcal:75,p:3.5,unit:'slice',g:30},
+{name:'white bread slice',aliases:['bread','white bread'],kcal:70,p:2.3,unit:'slice',g:28},
+{name:'milk tea with sugar',aliases:['chai','doodh pati','shakkar chai','tea','cup chai'],kcal:100,p:3,unit:'cup',g:200},
+{name:'black tea with sugar',aliases:['qehwa with sugar','black chai'],kcal:35,p:0,unit:'cup',g:200},
+{name:'milk (full fat)',aliases:['doodh','milk'],kcal:150,p:8,unit:'cup',g:250},
+{name:'plain dahi',aliases:['yogurt','dahi','desi dahi','homemade yogurt'],kcal:100,p:5.5,unit:'cup',g:200},
+{name:'chicken breast cooked',aliases:['chicken','grilled chicken','chicken tikka','murgh','chicken piece'],kcal:165,p:31,unit:'100g',g:100},
+{name:'chicken curry',aliases:['chicken salan','chicken shorba'],kcal:230,p:22,unit:'cup',g:240},
+{name:'chicken corn soup',aliases:['chicken soup','corn soup','knorr chicken corn soup'],kcal:130,p:6,unit:'bowl',g:250},
+{name:'chicken yakhni',aliases:['yakhni','chicken broth'],kcal:45,p:7,unit:'cup',g:240},
+{name:'daal cooked',aliases:['daal','dal','masoor daal','moong daal','chana daal'],kcal:190,p:11,unit:'cup',g:200},
+{name:'chana cooked',aliases:['choley','chole','chickpeas'],kcal:270,p:14,unit:'cup',g:200},
+{name:'boiled rice',aliases:['chawal','rice','white rice'],kcal:205,p:4.3,unit:'cup',g:160},
+{name:'biryani',aliases:['chicken biryani','beef biryani','pulao'],kcal:350,p:15,unit:'cup',g:200},
+{name:'sabzi cooked',aliases:['sabzi','mixed vegetables','tori','lauki','bhindi','cabbage','gobi'],kcal:100,p:3,unit:'cup',g:180},
+{name:'salad',aliases:['kheera','cucumber','tomato salad','kachumber'],kcal:35,p:1.5,unit:'cup',g:150},
+{name:'apple',aliases:['seb'],kcal:95,p:.5,unit:'piece',g:180},
+{name:'banana',aliases:['kela'],kcal:105,p:1.3,unit:'piece',g:120},
+{name:'orange',aliases:['malta','kino'],kcal:62,p:1.2,unit:'piece',g:130},
+{name:'guava',aliases:['amrood'],kcal:68,p:2.6,unit:'piece',g:100},
+{name:'dates',aliases:['khajoor','date'],kcal:66,p:.4,unit:'2 pieces',g:16},
+{name:'almonds',aliases:['badam'],kcal:58,p:2.1,unit:'10 pieces',g:12},
+{name:'peanuts',aliases:['moong phali'],kcal:85,p:3.5,unit:'15g',g:15},
+{name:'potato boiled',aliases:['aloo','boiled aloo'],kcal:135,p:3,unit:'medium piece',g:170},
+{name:'samosa',aliases:['aloo samosa'],kcal:260,p:5,unit:'piece',g:100},
+{name:'pakora',aliases:['pakoray','pakoda'],kcal:220,p:5,unit:'100g',g:100},
+{name:'roasted papad',aliases:['papar'],kcal:35,p:1.5,unit:'piece',g:10},
+{name:'oats cooked',aliases:['oats','daliya'],kcal:150,p:5,unit:'cup',g:230},
+{name:'cheese slice',aliases:['cheese'],kcal:80,p:5,unit:'slice',g:20},
+{name:'cooked fish',aliases:['machli','fish'],kcal:150,p:26,unit:'100g',g:100}
+];
+const $=id=>document.getElementById(id); const today=()=>new Date().toISOString().slice(0,10);
+let data=JSON.parse(localStorage.getItem('rozanaData')||'{}');
+function day(){if(!data[today()])data[today()]={foods:[],tasks:[{t:'Eat a protein source with meals',done:false},{t:'Eat vegetables or fruit',done:false},{t:'Complete planned movement',done:false},{t:'Drink water regularly',done:false},{t:'Take a mindful meal break',done:false},{t:'Aim for a consistent bedtime',done:false}],water:0,activities:[]};return data[today()]}
+function save(){localStorage.setItem('rozanaData',JSON.stringify(data));render()}
+function norm(s){return s.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu,' ').replace(/\s+/g,' ').trim()}
+function matchFood(q){let n=norm(q);return DB.find(f=>norm(f.name)===n||f.aliases.some(a=>norm(a)===n))||DB.find(f=>f.aliases.some(a=>n.includes(norm(a))||norm(a).includes(n))||norm(f.name).includes(n))}
+function render(){
+$('todayLabel').textContent=new Date().toLocaleDateString('en-PK',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
+let d=day(),settings=JSON.parse(localStorage.getItem('rozanaSettings')||'{}'),target=+settings.cal||1500,pt=+settings.protein||105,wt=+settings.water||8;
+let kcal=d.foods.reduce((a,x)=>a+x.kcal,0),protein=d.foods.reduce((a,x)=>a+x.p,0);
+$('calEaten').textContent=Math.round(kcal).toLocaleString();$('calLeft').textContent=Math.round(target-kcal).toLocaleString();$('proteinEaten').textContent=Math.round(protein)+'g';$('calBar').style.width=Math.min(100,kcal/target*100)+'%';$('calCaption').textContent=`${Math.round(kcal)} of ${target} kcal · ${Math.round(protein)} of ${pt}g protein`; $('calorieStatus').textContent=kcal>target?'Over target — no guilt':kcal>target*.75?'Nearly there':'On your way';
+let meals=['Breakfast','Lunch','Snack','Dinner'];$('foodDiary').innerHTML=d.foods.length?meals.map(m=>{let a=d.foods.filter(x=>x.meal===m);return a.length?`<div class="mealgroup"><h4>${m}</h4><table class="table">${a.map(x=>`<tr><td>${esc(x.name)} <span class="sub">× ${x.qty} ${esc(x.unit)}</span></td><td class="right">${Math.round(x.kcal)} kcal · ${Math.round(x.p)}g P</td><td class="right"><button class="delete" onclick="removeFood('${x.id}')">×</button></td></tr>`).join('')}</table></div>`:''}).join(''):'<div class="empty">Nothing logged yet. Add your first meal above.</div>';
+$('tasks').innerHTML=d.tasks.map((t,i)=>`<div class="task ${t.done?'done':''}"><input type="checkbox" ${t.done?'checked':''} onchange="toggleTask(${i})"><label>${esc(t.t)}</label><button class="delete" onclick="deleteTask(${i})">×</button></div>`).join('');
+let done=d.tasks.filter(x=>x.done).length;$('taskCount').textContent=done+'/'+d.tasks.length;$('taskBar').style.width=(d.tasks.length?done/d.tasks.length*100:0)+'%';
+$('waterCount').textContent=d.water+' / '+wt;$('waterMl').textContent=(d.water*250)+' ml';$('streakCount').textContent=d.water;$('waterButtons').innerHTML=Array.from({length:Math.min(wt,16)},(_,i)=>`<div class="glass ${i<d.water?'filled':''}" title="Glass ${i+1}"></div>`).join('');
+$('moveCount').textContent=d.activities.reduce((a,x)=>a+x.min,0);$('activityLog').innerHTML=d.activities.length?d.activities.map(x=>`<div class="task"><label>${esc(x.type)}</label><small>${x.min} min</small></div>`).join(''):'No movement logged yet today.';
+renderProgress();renderWeek();renderSwaps();fillDatalist();
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function addFood(){let q=$('foodInput').value.trim(),qty=+$('foodQty').value||1,unit=$('foodUnit').value;if(!q)return toast('Enter a food name first.');let f=matchFood(q),k,p,name;
+if(f){let factor=qty;if(unit==='g')factor=qty/f.g;else if(unit==='ml')factor=qty/250; k=f.kcal*factor;p=f.p*factor;name=f.name; if(unit==='serving')unit=f.unit;}
+else return toast('Not in the quick list — use “Add custom food” to enter an estimate.');
+let meal=prompt('Which meal? Type Breakfast, Lunch, Snack or Dinner','Lunch')||'Lunch';if(!['Breakfast','Lunch','Snack','Dinner'].includes(meal))meal='Snack';
+day().foods.push({id:Date.now().toString(),name,qty,unit,meal,kcal:k,p});$('foodInput').value='';save();toast('Food added to your diary.')}
+function quickFood(s){$('foodInput').value=s.replace(/^\d+\s/,'');$('foodQty').value=1;$('foodUnit').value='serving';addFood()}
+function customFood(){let name=prompt('Food name (English or Roman Urdu):');if(!name)return;let kcal=+prompt('Estimated calories for the portion you ate:','150');if(!Number.isFinite(kcal)||kcal<0)return toast('Please enter valid calories.');let p=+prompt('Estimated protein in grams (enter 0 if unsure):','5')||0;let meal=prompt('Meal: Breakfast, Lunch, Snack or Dinner','Snack')||'Snack';if(!['Breakfast','Lunch','Snack','Dinner'].includes(meal))meal='Snack';day().foods.push({id:Date.now().toString(),name,qty:1,unit:'portion',meal,kcal,p});save();toast('Custom food saved for today.')}
+function removeFood(id){day().foods=day().foods.filter(x=>x.id!==id);save()}
+function toggleTask(i){day().tasks[i].done=!day().tasks[i].done;save()}
+function deleteTask(i){day().tasks.splice(i,1);save()}
+function addTask(){let t=prompt('What is one small task for today?');if(t){day().tasks.push({t,done:false});save()}}
+function changeWater(n){day().water=Math.max(0,Math.min(30,day().water+n));save()}
+function logActivity(){let min=+$('activityMinutes').value;if(min<=0)return toast('Enter the minutes you moved.');day().activities.push({type:$('activityType').value,min});$('activityMinutes').value='';save();toast('Movement logged — well done!')}
+function saveProgress(){let w=+$('weightInput').value,wa=+$('waistInput').value;if(!w)return toast('Enter your weight first.');let p=JSON.parse(localStorage.getItem('rozanaProgress')||'[]');p.push({date:today(),weight:w,waist:wa||null});localStorage.setItem('rozanaProgress',JSON.stringify(p));$('weightInput').value='';$('waistInput').value='';renderProgress();renderWeek();toast('Check-in saved. One data point at a time.')}
+function renderProgress(){let p=JSON.parse(localStorage.getItem('rozanaProgress')||'[]');$('progressHistory').innerHTML=p.length?p.slice(-5).reverse().map(x=>`<div class="task"><label>${new Date(x.date+'T12:00:00').toLocaleDateString('en-PK',{day:'numeric',month:'short'})}</label><b>${x.weight} kg</b><small>${x.waist?x.waist+' cm waist':''}</small></div>`).join(''):'No check-ins yet.'}
+function renderWeek(){let arr=Object.keys(data).filter(k=>{let dt=new Date(k+'T12:00:00');return (Date.now()-dt.getTime())<7*86400000}).sort();let days=arr.map(k=>data[k]),meals=days.reduce((a,d)=>a+d.foods.length,0),tasks=days.reduce((a,d)=>a+d.tasks.filter(t=>t.done).length,0),water=days.reduce((a,d)=>a+d.water,0);$('weekView').innerHTML=`<div class="metric"><b>${arr.length}/7</b><span>Days tracked</span></div><div class="metric"><b>${tasks}</b><span>Tasks completed</span></div><div class="metric"><b>${water}</b><span>Glasses logged</span></div>`}
+function fillDatalist(){$('foodOptions').innerHTML=DB.map(f=>`<option value="${esc(f.name)}">`).join('')}
+function fillIngredients(s){$('ingredients').value=s}
+const RECIPES=[
+{n:'Chicken & lauki yakhni',keys:['chicken','lauki'],more:['green onion','cabbage'],k:280,p:35,how:'Simmer chicken with lauki, ginger, garlic and pepper. Add green onion at the end. Serve with a small roti if hungry.'},
+{n:'Anda bhurji with roti',keys:['egg','anda'],more:['tomato','onion'],k:300,p:16,how:'Scramble 2 eggs with tomato, onion and spices using a little oil. Pair with one medium chapati.'},
+{n:'Daal + kachumber bowl',keys:['daal'],more:['tomato','cucumber','onion'],k:330,p:15,how:'Serve one cup daal with fresh cucumber-tomato salad and a small chapati.'},
+{n:'Chicken cabbage stir-fry',keys:['chicken','cabbage'],more:['carrot','onion'],k:290,p:36,how:'Cook chicken strips with cabbage, carrot, garlic and spices in a teaspoon of oil.'},
+{n:'Dahi chana chaat',keys:['dahi','chana'],more:['tomato','onion','cucumber'],k:310,p:17,how:'Mix boiled chickpeas with plain yogurt, cucumber, tomato, lemon and chaat masala.'},
+{n:'Vegetable omelette',keys:['egg'],more:['spinach','tomato','onion'],k:220,p:14,how:'Make a 2-egg omelette with any available vegetables. Serve with fruit or toast.'},
+{n:'Masoor daal khichdi',keys:['daal','rice'],more:['onion','carrot'],k:370,p:16,how:'Cook a modest portion of rice with masoor daal and vegetables. Keep oil measured.'},
+{n:'Chicken corn soup',keys:['chicken'],more:['corn','egg','cabbage'],k:300,p:36,how:'Simmer shredded chicken, corn and vegetables in stock. Add a beaten egg slowly while stirring.'}
+];
+function suggestRecipes(){let raw=norm($('ingredients').value);if(!raw)return toast('Add a few ingredients first.');let words=raw.split(' '),found=RECIPES.map(r=>({...r,score:r.keys.filter(k=>words.some(w=>w.includes(k)||k.includes(w))).length+r.more.filter(k=>words.some(w=>w.includes(k))).length*.3})).filter(r=>r.score>0).sort((a,b)=>b.score-a.score).slice(0,4);$('recipes').innerHTML=found.length?found.map(r=>`<div class="recipe"><b>${r.n}</b><p>${r.how}</p><div class="meta">~${r.k} kcal · ~${r.p}g protein · estimate per serving</div></div>`).join(''):'<div class="hint">No close match yet. Try ingredient names like anda, egg, chicken, daal, chawal, dahi, lauki, aloo, gobi, cabbage, tomato or onion. Roman Urdu works for common words too.</div>'}
+function renderSwaps(){$('swaps').innerHTML=[['If you want','Try this','Why it helps'],['Paratha daily','Roti + egg / dahi','Often less added oil'],['Sugary drink','Water, lemon water or unsweetened chai','Less added sugar'],['Chips / nimko','Roasted chana or a measured handful of nuts','More filling options'],['Samosa / pakora','Homemade chana chaat or air-fried snack','Can reduce frying oil'],['Creamy packaged soup','Homemade chicken-vegetable yakhni','Control salt and add protein']].slice(1).map(x=>`<div class="task"><label><b>${x[0]}</b><br><span class="sub">→ ${x[1]}</span></label><span class="tag">${x[2]}</span></div>`).join('')}
+function saveSettings(){let s={cal:+$('targetCalories').value||1500,protein:+$('targetProtein').value||105,water:+$('targetWater').value||8,time:$('reminderTime').value||'09:00'};localStorage.setItem('rozanaSettings',JSON.stringify(s));render();toast('Your targets have been saved.')}
+function enableNotifications(){if(!('Notification'in window))return toast('This browser does not support notifications.');Notification.requestPermission().then(p=>{if(p==='granted'){toast('Notifications enabled while reminders are supported by your browser.');scheduleReminder()}else toast('Notifications were not enabled.')})}
+function scheduleReminder(){let s=JSON.parse(localStorage.getItem('rozanaSettings')||'{}'),time=s.time||'09:00';let [h,m]=time.split(':').map(Number),now=new Date(),next=new Date();next.setHours(h,m,0,0);if(next<=now)next.setDate(next.getDate()+1);setTimeout(()=>{if(Notification.permission==='granted')new Notification('Rozana — a gentle nudge 🌱',{body:'Pani piya? Apne liye 10 minutes nikalo. Small steps count.'});scheduleReminder()},next-now)}
+function exportData(){let blob=new Blob([JSON.stringify({data,progress:JSON.parse(localStorage.getItem('rozanaProgress')||'[]'),settings:JSON.parse(localStorage.getItem('rozanaSettings')||'{}')},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='rozana-backup-'+today()+'.json';a.click();URL.revokeObjectURL(a.href)}
+function importData(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(x.data)data=x.data; if(x.progress)localStorage.setItem('rozanaProgress',JSON.stringify(x.progress));if(x.settings)localStorage.setItem('rozanaSettings',JSON.stringify(x.settings));save();toast('Backup imported.')}catch(_){toast('Could not read that backup file.')}};r.readAsText(f)}
+function newDay(){if(confirm('Start today with a fresh food diary and daily tasks? Past days will remain saved.')){data[today()]={foods:[],tasks:[{t:'Eat a protein source with meals',done:false},{t:'Eat vegetables or fruit',done:false},{t:'Complete planned movement',done:false},{t:'Drink water regularly',done:false},{t:'Take a mindful meal break',done:false},{t:'Aim for a consistent bedtime',done:false}],water:0,activities:[]};save()}}
+function toast(s){$('toast').textContent=s;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2600)}
+const quotes=[['Consistency, perfection se zyada important hai.','Consistency matters more than perfection.'],['Aaj ka chhota step, kal ki strong habit.','One small step today can become a strong habit tomorrow.'],['Apni body ko punish nahi, nourish karo.','Nourish your body; don’t punish it.'],['Slow progress bhi progress hoti hai.','Slow progress is still progress.'],['Tumhein bas aaj ka din sambhalna hai.','You only need to take care of today.'],['Har meal ek naya chance hai.','Every meal is a fresh opportunity.']];
+let q=quotes[new Date().getDate()%quotes.length];$('motivation').textContent=q[0];$('motivationEn').textContent=q[1];
+let st=JSON.parse(localStorage.getItem('rozanaSettings')||'{}');if(st.cal)$('targetCalories').value=st.cal;if(st.protein)$('targetProtein').value=st.protein;if(st.water)$('targetWater').value=st.water;if(st.time)$('reminderTime').value=st.time;
+render();if(Notification.permission==='granted')scheduleReminder();
+</script>
+</body></html>
